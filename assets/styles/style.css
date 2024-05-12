@@ -272,20 +272,42 @@ header {
         width: 30%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: stretch;
         .tab {
           flex-grow: 1;
-          padding: 12px 16px;
+          /* overflow: hidden; */
           display: flex;
           align-items: center;
-          font-size: 20px;
-          font-weight: 500;
           border-bottom: 1px solid rgba(0, 0, 0, 6%);
+          padding: 12px 16px;
           cursor: pointer;
+          .tab-title {
+            font-weight: 500;
+            font-size: 20px;
+            svg {
+              display: none;
+            }
+          }
+          .m-tab-content {
+            display: none;
+            height: 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 6%);
+            transition: all 0.2s ease-out;
+            font-size: 14px;
+            color: #6c757d;
+            padding-inline: 20px;
+            .services {
+              display: flex;
+              flex-direction: column;
+              row-gap: 24px;
+            }
+          }
           &.active {
-            background: var(--primary-color);
-            color: var(--text-white);
             position: relative;
+            background: var(--primary-color);
+            .tab-title {
+              color: var(--text-white);
+            }
             &::after {
               content: " ";
               clip-path: polygon(100% 50%, 0 0, 0 100%);
@@ -717,13 +739,45 @@ footer {
   #services {
     .container {
       .tabbing {
-        flex-direction: column;
         .tabs {
+          background: #FFFFFF;
           width: 100%;
           .tab {
+            overflow: hidden;
+            flex-direction: column;
+            padding: 0;
+            border-bottom: 0;
+            .tab-title {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              border-bottom: 1px solid rgba(0, 0, 0, 6%);
+              padding: 12px 16px;
+              svg {
+                display: block;
+              }
+            }
+            .m-tab-content {
+              display: block;
+              width: 100%;
+            }
             &.active {
+              background: initial;
+              color: var(--text-white);
+              position: relative;
               &::after {
                 display: none;
+              }
+              .tab-title {
+                color: var(--primary-color);
+                font-weight: bold;
+              }
+              .m-tab-content {
+                padding-top: 16px;
+                padding-bottom: 16px;
+                /* padding: 16px 0px; */
+                height: auto;
               }
             }
           }

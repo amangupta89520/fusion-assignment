@@ -59,11 +59,13 @@ new Swiper('.swiper3', {
 const tabs = document.querySelector('#services .tabs');
 
 tabs.addEventListener('click', (e) => {
-  //resetting all the tabs first
-  Array.from(e.currentTarget.children).forEach(tab => {
-    tab.classList.remove('active');
-  });
-  e.target.classList.add('active');
+  const itemClicked = e.target.closest('.tab');
+  if(itemClicked) {
+    Array.from(e.currentTarget.children).forEach(tab => {
+      tab.classList.remove('active');
+    });
+    itemClicked.classList.add('active');
+  }
 });
 
 /* -------------------------- script for accordion -------------------------- */
@@ -75,7 +77,6 @@ accordion.addEventListener('click', (e) => {
     Array.from(e.currentTarget.children).forEach(accordionItem => {
       accordionItem.classList.remove('active');
     });
-    console.log('e.target.closest', itemClicked)
     itemClicked.classList.add('active');
   }
 })

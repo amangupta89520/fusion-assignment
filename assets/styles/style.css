@@ -1,12 +1,12 @@
 /* -------------------------------- variables ------------------------------- */
 :root {
   --font-family: "Poppins", sans-serif;
-  --primary-color: #E38B29;
+  --primary-color: #e38b29;
   --text-black: #212529;
-  --text-gray: #8A8A8A;
-  --text-white: #FFFFFF;
-  --bg-gray: #F9FAFB;
-  --swiper-theme-color: #E38B29;
+  --text-gray: #8a8a8a;
+  --text-white: #ffffff;
+  --bg-gray: #f9fafb;
+  --swiper-theme-color: #e38b29;
 }
 
 /* -------------------------------- reset css ------------------------------- */
@@ -79,7 +79,7 @@ header {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.01), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   position: sticky;
   top: 0;
-  background: #FFFFFF;
+  background: #ffffff;
   z-index: 10;
   & > nav.container {
     display: flex;
@@ -102,7 +102,7 @@ header {
         column-gap: 32px;
         a {
           font-weight: 600;
-          color: #000000A6;
+          color: #000000a6;
           &.active {
             color: var(--primary-color);
           }
@@ -212,7 +212,7 @@ header {
     width: 90%;
     margin: auto;
     height: 324px;
-    
+
     .swiper-slide {
       .card {
         height: 100%;
@@ -268,7 +268,7 @@ header {
       display: flex;
       column-gap: 60px;
       .tabs {
-        background: #F9FAFB;
+        background: #f9fafb;
         width: 30%;
         display: flex;
         flex-direction: column;
@@ -370,7 +370,7 @@ header {
     .swiper3 {
       width: 100%;
       height: 460px;
-      
+
       .swiper-slide {
         width: 100%;
         .card {
@@ -383,7 +383,7 @@ header {
           display: flex;
           align-items: center;
           column-gap: 80px;
-  
+
           .media-wrapper {
             position: relative;
             .quote-icon {
@@ -403,7 +403,7 @@ header {
           .content {
             row-gap: 16px;
             .desc {
-              color: #212529BF;
+              color: #212529bf;
               line-height: 24px;
             }
             .info {
@@ -487,7 +487,7 @@ header {
       align-items: center;
       border-radius: 24px;
       background-color: var(--primary-color);
-      background-image: url('https://www.fusionfirst.com/insurance-lp-2023/assets/images/Intersect.svg');
+      background-image: url("https://www.fusionfirst.com/insurance-lp-2023/assets/images/Intersect.svg");
       background-repeat: no-repeat;
       background-position: right;
       height: 500px;
@@ -551,7 +551,7 @@ header {
       }
       .desc {
         line-height: normal;
-        color: #6C757D;
+        color: #6c757d;
       }
     }
     .extras {
@@ -563,6 +563,45 @@ header {
       }
       .accordian-wrapper {
         width: 50%;
+        .accordion {
+          display: flex;
+          flex-direction: column;
+          row-gap: 8px;
+          .accordion-item {
+            overflow: hidden;
+            background: #FFFFFF;
+            border-radius: 8px;
+            .accordion-title {
+              border-bottom: 1px solid rgba(0, 0, 0, 6%);
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 16px 20px;
+              font-size: 20px;
+              cursor: pointer;
+            }
+            .accordion-content {
+              height: 0;
+              border-bottom: 1px solid rgba(0, 0, 0, 6%);
+              transition: all 0.2s ease-out;
+              font-size: 14px;
+              color: #6c757d;
+              padding-inline: 20px;
+            }
+            &.active {
+              .accordion-title {
+                color: var(--primary-color);
+                font-weight: bold;
+              }
+              .accordion-content {
+                padding-top: 16px;
+                padding-bottom: 16px;
+                /* padding: 16px 0px; */
+                height: auto;
+              }
+            }
+          }
+        }
       }
     }
     .usp-wrapper {
@@ -594,10 +633,10 @@ header {
         h3 {
           font-weight: 600;
           font-size: 16px;
-          color: #6C757D;
+          color: #6c757d;
         }
         span {
-          color: #6C757D;
+          color: #6c757d;
         }
       }
     }

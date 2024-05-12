@@ -13,7 +13,7 @@ navLinks.addEventListener('click', (e) => {
 
 /* ----------------------- initializing swiper sliders ---------------------- */
 new Swiper('.swiper1', {
-  // allowTouchMove: false,
+  allowTouchMove: false,
   loop: true,
   slidesPerView: 'auto',
   freeMode: true,
@@ -30,10 +30,10 @@ new Swiper('.swiper2', {
   spaceBetween: 60,
   freeMode: true,
   autoplay: {
-    delay: 10,
+    delay: 1000,
     disableOnInteraction: false
   },
-  // speed: 5000
+  speed: 2000
 });
 
 new Swiper('.swiper3', {
@@ -54,3 +54,17 @@ tabs.addEventListener('click', (e) => {
   });
   e.target.classList.add('active');
 });
+
+/* -------------------------- script for accordion -------------------------- */
+const accordion = document.querySelector('.accordion');
+
+accordion.addEventListener('click', (e) => {
+  const itemClicked = e.target.closest('.accordion-item');
+  if(itemClicked) {
+    Array.from(e.currentTarget.children).forEach(accordionItem => {
+      accordionItem.classList.remove('active');
+    });
+    console.log('e.target.closest', itemClicked)
+    itemClicked.classList.add('active');
+  }
+})

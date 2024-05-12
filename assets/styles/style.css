@@ -433,8 +433,18 @@ header {
       flex-direction: column;
       row-gap: 32px;
       align-items: flex-start;
+      .m-media-wrapper {
+        display: none;
+        width: 100%;
+        img {
+          border-radius: 8px;
+          margin: 0 auto;
+          display: block;
+        }
+      }
       .section-title {
         font-weight: 300;
+        text-wrap: balance;
       }
       .inner-content {
         display: flex;
@@ -643,6 +653,7 @@ header {
   }
 }
 
+/* ------------------------------ footer styles ----------------------------- */
 footer {
   background: #212529;
   padding: 24px 0;
@@ -658,6 +669,273 @@ footer {
       display: flex;
       align-items: center;
       column-gap: 16px;
+    }
+  }
+}
+
+/* ------------------------ Styles for responsiveness ----------------------- */
+@media (max-width: 991px) {
+  /* ------------------------------ common styles ----------------------------- */
+  .container {
+    max-width: 720px;
+    box-sizing: border-box;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  header {
+    & > nav.container {
+      .logo {
+        width: 110px;
+      }
+      .nav-content {
+        display: none;
+      }
+    }
+  }
+
+  #introSection {
+    padding-top: 48px;
+    .container {
+      flex-direction: column;
+      .media-wrapper {
+        display: none;
+      }
+    }
+  }
+  
+  #ourClients {
+    .container {
+      .swiper {
+        display: none;
+      }
+    }
+  }
+
+  #services {
+    .container {
+      .tabbing {
+        flex-direction: column;
+        .tabs {
+          width: 100%;
+          .tab {
+            &.active {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+        .tabs-content {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #testimonials {
+    .container {
+      .swiper3 {
+        height: 480px;
+        .swiper-slide {
+          .card {
+            padding-top: 48px;
+            align-items: flex-start;
+            column-gap: 24px;
+            .media-wrapper {
+              width: 30%;
+              img {
+                width: 100%;
+              }
+            }
+            .content {
+              width: 70%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #expertConsultant {
+    .container {
+      flex-direction: column;
+      .media-wrapper {
+        display: none;
+      }
+      .content {
+        .m-media-wrapper {
+          display: block;
+        }
+      }
+    }
+  }
+
+  #businessGrowth {
+    .container-wrapper {
+      box-sizing: border-box;
+      padding: 0 12px;
+      .container {
+        height: auto;
+        flex-direction: column;
+        .content {
+          width: 60%;
+          padding-top: 32px;
+          padding-left: 0;
+          align-items: center;
+          .inner-content {
+            align-items: center;
+            text-align: center;
+            .section-title {
+              font-size: 24px;
+              line-height: normal;
+            }
+          }
+        }
+        .media-wrapper {
+          img {
+            position: initial;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  #aboutUs {
+    .container {
+      .extras {
+        flex-direction: column;
+        row-gap: 24px;
+        .accordian-wrapper {
+          width: 100%;
+        }
+        .media-wrapper {
+          width: 100%;
+          height: 360px;
+        }
+      }
+      .usp-wrapper {
+        flex-wrap: wrap;
+        row-gap: 16px;
+        .usp {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  #countries {
+    .container {
+      .card {
+        flex-direction: column;
+        row-gap: 8px;
+        .content {
+          text-align: center;
+          h3 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .container {
+      flex-direction: column;
+      row-gap: 12px;
+      .certifications {
+        row-gap: 12px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 28px;
+    line-height: normal;
+  }
+
+  #introSection {
+    padding-top: 28px;
+  }
+
+  #ourClients {
+    padding-bottom: 32px;
+  }
+
+  #successStories {
+    .swiper2 {
+      box-sizing: border-box;
+      height: 360px;
+    }
+  }
+
+  #testimonials {
+    .container {
+      .swiper3 {
+        height: 640px;
+        .swiper-slide {
+          .card {
+            flex-direction: column;
+            padding-top: 16px;
+            row-gap: 24px;
+            .media-wrapper {
+              width: 100%;
+              img {
+                display: none;
+              }
+              .quote-icon {
+                display: block;
+                position: initial;
+              }
+            }
+            .content {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #businessGrowth {
+    & > img {
+      height: 540px;
+    }
+    .container-wrapper {
+      .container {
+        box-sizing: border-box;
+        .content {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  #aboutUs {
+    .container {
+      .usp-wrapper {
+        .usp {
+          h3 {
+            font-size: 36px;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .container {
+      text-align: center;
+      .certifications {
+        justify-content: center;
+      }
     }
   }
 }

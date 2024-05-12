@@ -26,14 +26,25 @@ new Swiper('.swiper1', {
 
 new Swiper('.swiper2', {
   loop: true,
-  slidesPerView: 3,
-  spaceBetween: 60,
-  freeMode: true,
   autoplay: {
     delay: 1000,
     disableOnInteraction: false
   },
-  speed: 2000
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
+  speed: 2000,
+  breakpoints: {
+    991: {
+      freeMode: true,
+      slidesPerView: 3,
+      spaceBetween: 60,
+      pagination: {
+        el: ""
+      },
+    }
+  }
 });
 
 new Swiper('.swiper3', {

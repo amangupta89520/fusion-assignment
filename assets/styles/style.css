@@ -327,6 +327,7 @@ header {
         .tab-content {
           display: none;
           justify-content: space-between;
+          column-gap: 16px;
           .services {
             padding: 16px 0;
             display: flex;
@@ -696,15 +697,42 @@ footer {
 }
 
 /* ------------------------ Styles for responsiveness ----------------------- */
+@media (max-width: 1400px) {
+  /* ------------------------------ common styles ----------------------------- */
+  .container {
+    max-width: 1140px;
+    box-sizing: border-box;
+  }
+  .section-title {
+    font-size: 36px;
+  }
+
+  #businessGrowth {
+    .container-wrapper {
+      .container {
+        .media-wrapper {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  /* ------------------------------ common styles ----------------------------- */
+  .container {
+    max-width: 960px;
+    box-sizing: border-box;
+  }
+}
+
 @media (max-width: 991px) {
   /* ------------------------------ common styles ----------------------------- */
   .container {
     max-width: 720px;
     box-sizing: border-box;
-  }
-
-  .section-title {
-    font-size: 36px;
   }
 
   header {
@@ -876,6 +904,10 @@ footer {
         row-gap: 16px;
         .usp {
           width: 50%;
+          h3 {
+            font-size: 48px;
+            line-height: 50px;
+          }
         }
       }
     }
@@ -908,6 +940,11 @@ footer {
   }
 }
 
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 32px;
+  }
+}
 
 @media (max-width: 480px) {
   .section-title {

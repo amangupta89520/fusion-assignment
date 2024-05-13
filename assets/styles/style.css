@@ -286,6 +286,7 @@ header {
             font-size: 20px;
             svg {
               display: none;
+              transition: all 0.2s ease;
             }
           }
           .m-tab-content {
@@ -307,6 +308,13 @@ header {
             background: var(--primary-color);
             .tab-title {
               color: var(--text-white);
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+            .m-tab-content {
+              border-width: 2px;
+              border-color: var(--primary-color);
             }
             &::after {
               content: " ";
@@ -612,6 +620,9 @@ header {
               padding: 16px 20px;
               font-size: 20px;
               cursor: pointer;
+              svg {
+                transition: all 0.2s ease;
+              }
             }
             .accordion-content {
               height: 0;
@@ -625,6 +636,9 @@ header {
               .accordion-title {
                 color: var(--primary-color);
                 font-weight: bold;
+                svg {
+                  transform: rotate(180deg);
+                }
               }
               .accordion-content {
                 padding-top: 16px;
@@ -746,7 +760,16 @@ footer {
     }
   }
 
+  .bg-wrapper {
+    background-image: url('https://www2023.fusionfirst.com/assets/images/headerImage1.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-color: rgba(255, 255, 255, 0.175);
+    position: relative;
+  }
+
   #introSection {
+    background-color: rgba(255, 255, 255, 0.7);
     padding-top: 48px;
     .container {
       flex-direction: column;
@@ -757,6 +780,7 @@ footer {
   }
   
   #ourClients {
+    background-color: rgba(255, 255, 255, 0.7);
     .container {
       .swiper {
         display: none;
